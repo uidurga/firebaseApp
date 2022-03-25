@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import{AuthService} from 'src/app/shared/auth.service'
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   email : string = '';
   password : string = '';
 
-  constructor(public auth:AuthService,public snackbar:MatSnackBar) { }
+  constructor(public auth:AuthService,public snackbar:MatSnackBar,public Router:Router) { }
 
   ngOnInit(): void {
 
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
    
 
     this.auth.login(this.email,this.password);
+    // this.Router.navigate(['/emplist']);
     
   }
 

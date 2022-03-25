@@ -50,7 +50,7 @@ login(email:any,password:any){
    googleSignIn() {
     return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
 
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/emplist']);
       localStorage.setItem('token',JSON.stringify(res.user?.uid));
 
     }, err => {

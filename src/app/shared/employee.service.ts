@@ -28,6 +28,7 @@ getEmployee(){
       empoyeeemail:emp.empoyeeemail,
       employeephonenumber:emp.employeephonenumber
     })
+    
   }
   updateemployee(emp:any){
 

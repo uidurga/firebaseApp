@@ -1,11 +1,13 @@
 <mat-toolbar>
-    <span class="text-center">Employee Firebase</span>
-</mat-toolbar>
+    <span class="text-center ">Employee Firebase</span>
+</mat-toolbar><br>
 
-<h1 style="color: brown;" class="mt-5 text-center">Create Employee </h1>
+
 <div class="row">
     <div class="col-md-6 mx-auto">
+        
         <mat-card>
+                <h1 style="color: brown;" class="mt-5 text-center">Create Employee </h1>
             <form [formGroup]="emp.form" (ngSubmit)="createemp()">
                 <div class="admincontrol">
                     <input  type="hidden" formControlName="$key">

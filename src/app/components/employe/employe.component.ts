@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import{EmployeeService} from 'src/app/shared/employee.service'
 @Component({
   selector: 'app-employe',
@@ -7,7 +8,7 @@ import{EmployeeService} from 'src/app/shared/employee.service'
 })
 export class EmployeComponent implements OnInit {
 
-  constructor( public emp:EmployeeService) { }
+  constructor( public emp:EmployeeService,public router:Router) { }
 
   ngOnInit(): void {
   this.emp.getEmployee()
@@ -17,6 +18,7 @@ export class EmployeComponent implements OnInit {
   createemp(){
     console.log(this.emp.form.value)
     this.emp.insertemployee(this.emp.form.value)
+    this.router.navigate(['/emplist'])
   }
 
 }

@@ -25,3 +25,12 @@ table {
     height: 56px;
     background-color: #E4DEFF;
   }
+  .employlist{
+    padding:20px;
+    background-color: #fff;
+    margin: 20px;
+  }
+  .tr{  
+    display: block;
+    text-align: right;
+  }
