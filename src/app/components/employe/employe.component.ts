@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import{EmployeeService} from 'src/app/shared/employee.service'
+import{EmployeeService} from 'src/app/shared/employee.service';
 @Component({
   selector: 'app-employe',
   templateUrl: './employe.component.html',
@@ -20,5 +20,9 @@ export class EmployeComponent implements OnInit {
     this.emp.insertemployee(this.emp.form.value)
     this.router.navigate(['/emplist'])
   }
+  public checkError = (controlName: string, errorName: string) => {
+    return this.emp.form.controls[controlName].hasError(errorName);
+  }
 
 }
+

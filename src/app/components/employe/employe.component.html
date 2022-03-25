@@ -15,17 +15,22 @@
                         <mat-label>
                             Employee Name
                         </mat-label>
-                        <input matInput formControlName="employeename">
+                        <input matInput formControlName="employeename" required>
+                        <mat-error *ngIf="checkError('employeename', 'required')">Name is required</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="outline" color="warn" style="width: 100%;">
                         <mat-label>Employee Email</mat-label>
-                        <input matInput formControlName="empoyeeemail">
+                        <input matInput formControlName="empoyeeemail" required>
+                        <mat-error *ngIf="checkError('empoyeeemail', 'required')">Email is required</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="outline" color="warn" style="width: 100%;">
                         <mat-label>Employee Phonenumber</mat-label>
-                        <input matInput formControlName="employeephonenumber">
+                        <input matInput formControlName="employeephonenumber" required>
+                        <mat-error *ngIf="checkError('employeephonenumber', 'required')">Phonenumber is required</mat-error>
                     </mat-form-field>
-                    <button mat-raised-button color="primary"> Submit</button>
+                    <button mat-raised-button color="primary" [disabled]="checkError('employeename', 'required') ||
+                     checkError('empoyeeemail', 'required')||
+                      checkError('employeephonenumber', 'required')"> Submit</button>
                 </div>
             </form>
         </mat-card>
