@@ -1,0 +1,32 @@
+import { Component, OnInit } from '@angular/core';
+import {EmployeeService} from 'src/app/shared/employee.service'
+import {MatTableDataSource, _MatTableDataSource} from '@angular/material/table'
+@Component({
+  selector: 'app-employeelist',
+  templateUrl: './employeelist.component.html',
+  styleUrls: ['./employeelist.component.css']
+})
+export class EmployeelistComponent implements OnInit {
+listdata:MatTableDataSource<any>
+  constructor(public emp:EmployeeService) { }
+  displayedColumns: string[] = [
+    'Employee Name',
+    'Employee Phone Number',
+    'Employee Email',
+    
+  ];
+  ngOnInit(): void {
+    this.emp.getEmployee().subscribe(list=>{
+      let array = list.map(
+        item => {
+          return {
+            $key:item.key,
+            ...item.payload.val()
+          }
+        }
+      )
+      this.listdata = new MatTableDataSource(array)
+    })
+  }
+
+}

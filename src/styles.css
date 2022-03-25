@@ -1,0 +1,20 @@
+body{
+    background: url('../src/assets/bg.jpg');
+}
+.pl-2{
+    margin-left: 20px;
+}
+.mt{
+margin-top: 20%;
+}
+.mb10{
+    margin-bottom: 20px;
+}
+.p20{
+    padding: 30px;
+}
+.myt{
+    color:#0b5ed7 !important;
+    font-size:30px !important;
+    margin-top: 20px !important;
+}

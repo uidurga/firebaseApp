@@ -1,0 +1,33 @@
+<mat-toolbar>
+    <span class="text-center">Employee Firebase</span>
+</mat-toolbar>
+
+<h1 style="color: brown;" class="mt-5 text-center">Create Employee </h1>
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <mat-card>
+            <form [formGroup]="emp.form" (ngSubmit)="createemp()">
+                <div class="admincontrol">
+                    <input  type="hidden" formControlName="$key">
+                    <mat-form-field appearance="outline" color='warn' style="width: 100%;">
+                        <mat-label>
+                            Employee Name
+                        </mat-label>
+                        <input matInput formControlName="employeename">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" color="warn" style="width: 100%;">
+                        <mat-label>Employee Email</mat-label>
+                        <input matInput formControlName="empoyeeemail">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" color="warn" style="width: 100%;">
+                        <mat-label>Employee Phonenumber</mat-label>
+                        <input matInput formControlName="employeephonenumber">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary"> Submit</button>
+                </div>
+            </form>
+        </mat-card>
+
+    </div>
+
+</div>
